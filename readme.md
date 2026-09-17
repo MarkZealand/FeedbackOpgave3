@@ -22,17 +22,17 @@ Spillet fortsætter, indtil spilleren gætter rigtigt eller løber tør for fors
 Programmet er opdelt i følgende metoder:
 
 - `showIntroduction()` – viser en kort introduktion til spillet.
-- `chooseDifficulty(Scanner input)` – viser sværhedsgrader og læser spillerens valg.
-- `getMaxAttempts(int difficultyChosen)` – returnerer maks antal forsøg ud fra sværhedsgrad.
-- `getMaxRange(int difficultyChosen)` – returnerer talintervallets øvre grænse ud fra sværhedsgrad.
+- `chooseDifficulty(Scanner input)` – viser sværhedsgrader og behandler spillerens valg.
+- `getMaxAttempts(int difficultyChosen)` – returnerer maks antal forsøg baseret på sværhedsgrad.
+- `getMaxRange(int difficultyChosen)` – returnerer tallets øvre grænse baseret på sværhedsgrad.
 - `generateRandomNumber(int maxRange)` – genererer det tilfældige tal.
-- `getPlayerGuess(Scanner input)` – læser spillerens gæt.
+- `getPlayerGuess(Scanner input)` – behandler input for spillerens gæt.
 - `processGuess(int guess, int target)` – vurderer gættet og returnerer en tekstbesked.
-- `isGameOver(String result)` – afgør, om spillet er slut.
-- `showAttemptsLeft(int maxAttempts, int attempts)` – returnerer antal forsøg tilbage som tekst.
-- `showScoreBoard(boolean won, int attempts, int target, int maxAttempts, int maxRange)` – viser resultatet og en eventuel procentscore.
-- `askForRestart(Scanner input)` – spørger, om spilleren vil spille igen.
-- `showOutro()` – afslutter spillet med en farvel-besked.
+- `isGameOver(String result)` – afgør om spillet er slut.
+- `showAttemptsLeft(int maxAttempts, int attempts)` – viser antal forsøg tilbage som tekst.
+- `showScoreBoard(boolean won, int attempts, int target, int maxAttempts, int maxRange)` – viser resultatet og en procentscore.
+- `askForRestart(Scanner input)` – spørger om spilleren vil spille igen.
+- `showOutro()` – viser en afsluttende besked.
 
 ## Hvorfor denne opdeling
 
