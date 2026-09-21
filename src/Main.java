@@ -26,7 +26,7 @@ import java.util.Scanner;
 				attempts++;
 				String result = processGuess(guess, target);
 				System.out.println(result);
-				correctGuess = isGameOver(result);
+				correctGuess = isCorrectGuess(result);
 
                 //UDVIDELSE #1 - VIS SPILLEREN HVOR MANGE FORSØG TILBAGE
                 System.out.println("FORSØG TILBAGE: " + showAttemptsLeft(maxAttempts, attempts));
@@ -96,7 +96,7 @@ import java.util.Scanner;
         return input.nextInt();
     }
     static String processGuess(int guess, int target){
-        String result = "UGYLDIGT GÆT";
+        String result = "";
         //EVALUERER SPILLERENS SENESTE GÆTTEDE TAL OG FORTÆLLER RESULTATET (LAVT, HØJT eller KORREKT)
         if(guess == target){
             result = "KORREKT!";
@@ -116,7 +116,7 @@ import java.util.Scanner;
         }
         return result;
     }
-    static boolean isGameOver(String result){
+    static boolean isCorrectGuess(String result){
         switch (result){
             case "KORREKT!":
                 return true;
@@ -137,14 +137,14 @@ import java.util.Scanner;
         }
     }
 	static void showScoreBoard(boolean won, int attempts, int target, int maxAttempts, int maxRange) {
-		//VISER SCOREBOARD, SAMT BESKED DER SPØRGER OM SPILLEREN VIL PRØVE IGEN
+		//VISER SCOREBOARD
 		System.out.println("============================================");
 		if (won) {
 			System.out.println("Du gættede tallet " + target + " på " + attempts + " forsøg!");
 
             //UDVIDELSE #2 - VIS BEREGNET SCORE I PROCENT UD FRA ANTAL FORSØG KONTRA MAKS MULIGE FORSØG
             if (maxAttempts > 0) {
-                int percentageScore = (maxAttempts - attempts) * 100 / maxAttempts;
+                double percentageScore = (maxAttempts - attempts) * 100.0 / maxAttempts;
                 System.out.println("Din samlede score er: " + percentageScore + "%");
             } else {
                 System.out.println("Din samlede score er: ubegrænset antal forsøg – ingen procentberegning.");

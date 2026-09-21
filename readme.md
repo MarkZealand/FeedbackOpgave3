@@ -58,12 +58,14 @@ baseret på hvilken sværhedsgrad spilleren valgte i en given runde.
 Vi besluttede os for at bruge to WHILE løkker til at håndtere selve spillet.
 
 1. Den første WHILE løkke styres af en boolean `keepPlaying`, som kontrollerer om spilleren vil spille endnu en runde. 
-Vi valgte WHILE løkken, fordi vi ikke ved hvor mange forsøg det vil tage spilleren at gætte korrekt, eller om spilleren bruger alle forsøg uden at ramme rigtigt.
+Denne WHILE løkke blev valgt for at holde spillet kørende uden at håndtere specifikke runder.
 
 2. Den anden WHILE løkke kører gentagne gange mens spilleren endnu ikke har gættet korrekt  `(correctGuess)`,
 ligesom vi også sikrer os at spilleren enten har ubegrænset antal forsøg `(maxAttempts == 0)`,
 eller at spilleren endnu ikke har brugt alle deres forsøg i runden `(attempts < maxAttempts)`. 
 WHILE løkkenen stopper, når spilleren gætter rigtigt, eller når antallet af forsøg er brugt op. 
+Vi valgte WHILE løkken, fordi vi ikke ved hvor mange forsøg det vil tage spilleren at gætte korrekt, eller om spilleren bruger alle forsøg uden at ramme rigtigt.
+
 
 ## Ting vi har testet
 | Testscenarie | Forventet resultat | Faktisk resultat |
@@ -87,3 +89,15 @@ WHILE løkkenen stopper, når spilleren gætter rigtigt, eller når antallet af 
 
 Hvis vi husker at anvende gode navne til metoderne, er det en hjælp når man skal læse koden igennem og se hvad de forskellige dele gør.
 På nogle måder kan det gøre den samlede kode længere når man bruger metoder, fordi det fylder mere i antal linjer, men det kan omvendt også spare tid og besvær, især hvis der skal gentages kode, rettes ét sted og lignende.
+
+## Changelog
+
+1. Opdateret readme med WHILE løkke forklaring
+2. Omdøbt isGamOver -> isCorrectGuess
+3. Noteret (I skal ikke nødvendigvis lave en avanceret løsning på det nu, men I skal kunne se problemet og forklare, hvorfor det gør programmet mere skrøbeligt.)
+4. Noteret (Inputvalidering var en mulig udvidelse og ikke et krav til grundversionen, men I skal kunne forklare programmets faktiske opførsel.)
+5. Noteret (0 BETYDER IKKE RIGTIGT MAKSIMUM 0 - Det er ikke nødvendigvis forkert, men betydningen ligger skjult i koden.)
+6. Udregning af score ændret til double i stedet for int. Selve udregningens formel også opdateret.
+7. Noteret. Fjernet rudiment af kode ("UGYLDIGT GÆT") da vi ikke validerer input 
+8. showScore har mere end 1 metode, korrekt. (ændres senere...)
+9. Opdateret kommentar. 
